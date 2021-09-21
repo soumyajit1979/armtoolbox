@@ -112,14 +112,19 @@ ul.side-menu {
 }
 
 @media only screen and (max-width: 1135px) {
-  .sticky-outer-wrapper.active .side-menu-wrapper {
+  .sticky-outer-wrapper.active .side-menu-wrapper, .sticky-outer-wrapper.active .side-menu-wrapper-outer {
     -webkit-box-shadow: 0 1px 4px hsla(0, 0%, 0%, 0.16);
     box-shadow: 0 1px 4px hsla(0, 0%, 0%, 0.16);
   }
-  .dark .sticky-outer-wrapper.active .side-menu-wrapper {
+  .dark .sticky-outer-wrapper.active .side-menu-wrapper, .dark .sticky-outer-wrapper.active .side-menu-wrapper-outer {
     -webkit-box-shadow: 0 1px 4px hsla(255, 255%, 255%, 0.16);
     box-shadow: 0 1px 4px hsla(255, 255%, 255%, 0.16);
   }
+}
+
+.side-menu-wrapper-outer {
+  position: absolute;
+  padding-top: 25px;
 }
 
 ul.main-nav li a.active::after {

@@ -6,6 +6,8 @@ import AuthHeader from 'components/Header/AuthHeader/AuthHeader';
 import AppWrapper, { ContentWrapper } from './Layout.styled';
 import { useThemeSwitcherCtx, THEME } from 'contexts/theme/theme.provider';
 import { Sidebar } from 'containers/Chat/Chat.styled';
+import OuterMenu from 'components/SideMenu/OuterMenu';
+import { Cell } from 'baseui/layout-grid';
 
 const Layout: React.FunctionComponent<{ router?: any }> = ({
   router,
@@ -38,7 +40,12 @@ const Layout: React.FunctionComponent<{ router?: any }> = ({
       {pathname === '/login' || pathname === '/signup' ? (
         <AuthHeader pathname={pathname} />
       ) : (
-        <Header />
+        <>
+          <Header />
+          <Cell span={[12, 12, 3]}>
+            <OuterMenu />
+          </Cell>
+        </>
       )}
       <ContentWrapper>{children}</ContentWrapper>
 
